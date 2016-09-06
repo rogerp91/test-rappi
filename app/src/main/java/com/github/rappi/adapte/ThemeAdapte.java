@@ -28,6 +28,7 @@ import butterknife.ButterKnife;
  */
 
 public class ThemeAdapte extends RecyclerView.Adapter<ThemeAdapte.ViewHolder> {
+
     private static String TAG = ThemeAdapte.class.getSimpleName();
 
     private List<Child> children;
@@ -59,13 +60,11 @@ public class ThemeAdapte extends RecyclerView.Adapter<ThemeAdapte.ViewHolder> {
         }
 
         String url = data_.getBannerImg();
-        Log.d(TAG, "URL one : " + data_.getBannerImg());
         if (url.isEmpty()) {
             url = SelectsImage.selectImg();
         }
 
-        Log.d(TAG, "URL: " + url);
-
+        // IMG
         Picasso.with(RappiApplication.getContext()).load(url).into(holder.img_banner);
 
         holder.button.setOnClickListener(new View.OnClickListener() {

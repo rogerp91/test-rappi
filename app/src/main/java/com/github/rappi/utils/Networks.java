@@ -12,6 +12,11 @@ import com.github.rappi.RappiApplication;
  */
 public class Networks {
 
+    /**
+     * Red
+     * @param context {@link Context}
+     * @return boolean
+     */
     public static boolean isOnline(Context context) {
         Context ctx = context == null ? RappiApplication.getContext() : context;
         ConnectivityManager connMgr = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);

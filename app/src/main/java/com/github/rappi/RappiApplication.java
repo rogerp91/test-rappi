@@ -21,10 +21,16 @@ public class RappiApplication extends Application {
 
     private static RappiApplication instance;
 
+    /**
+     * @return Application
+     */
     public static RappiApplication getInstance() {
         return instance;
     }
 
+    /**
+     * @return Context
+     */
     public static Context getContext() {
         return instance.getApplicationContext();
     }
@@ -37,6 +43,10 @@ public class RappiApplication extends Application {
         SystemClock.sleep(TimeUnit.SECONDS.toMillis(1));//Splash
     }
 
+    /**
+     * @param modules {@link Object}
+     * @return ObjectGraph
+     */
     public ObjectGraph buildGraphWithAditionalModules(List<Object> modules) {
         if (modules == null) {
             throw new IllegalArgumentException("Null module, review your getModules() implementation");
@@ -44,6 +54,9 @@ public class RappiApplication extends Application {
         return objectGraph.plus(modules.toArray());
     }
 
+    /**
+     * Inject
+     */
     public void initDependencyInjection() {
         objectGraph = ObjectGraph.create(new AppModules(this));
         objectGraph.inject(this);

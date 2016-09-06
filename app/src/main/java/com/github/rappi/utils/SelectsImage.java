@@ -10,6 +10,12 @@ import java.util.Random;
 
 public class SelectsImage {
 
+    /**
+     *  Random
+     * @param min mínimo
+     * @param max maximo
+     * @return int
+     */
     private static int getRandomNumberInRange(int min, int max) {
         if (min >= max) {
             throw new IllegalArgumentException("max must be greater than min");
@@ -18,6 +24,10 @@ public class SelectsImage {
         return r.nextInt((max - min) + 1) + min;
     }
 
+    /**
+     * Seleccionar img
+     * @return String
+     */
     public static String selectImg() {
         int num = getRandomNumberInRange(1, 6);
         Log.d("SelectsImage", "selectImg: " + Integer.toString(num));

@@ -28,6 +28,9 @@ public class BaseActivity extends AppCompatActivity{
         injectDependencies();
     }
 
+    /**
+     * Inject
+     */
     private void injectDependencies() {
         RappiApplication application = (RappiApplication) getApplication();
         List<Object> activityScopeModules = new ArrayList<>();
